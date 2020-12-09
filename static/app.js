@@ -39,3 +39,21 @@ function dataDemoInfo(subjectID){
     }); 
 };  
 
+// Creating the sample charts
+
+function sampleCharts(subjectID){
+    // console.log("chart subjectID",subjectID); #checking with console.log
+
+    // Collect data for subjectID
+    d3.json(dataUrl).then(data => {
+       
+        let samples = data.samples;
+        // console.log("samples data:",samples); #More checking
+
+        let filterSamples = samples[samples.findIndex(element => element.id === subjectID)];
+        // console.log("filterSamples:",filterSamples); # Checking
+
+        // Getting the arrays
+        let otuIDs = filterSamples.otu_ids;
+        let otuLabels = filterSamples.otu_labels;
+        let sampleValues = filterSamples.sample_values; 
