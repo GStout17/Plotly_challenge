@@ -56,4 +56,31 @@ function sampleCharts(subjectID){
         // Getting the arrays
         let otuIDs = filterSamples.otu_ids;
         let otuLabels = filterSamples.otu_labels;
-        let sampleValues = filterSamples.sample_values; 
+        let sampleValues = filterSamples.sample_values;
+
+// Bar Chart Portion
+
+        // Top 10 data
+        let bar_xData = sampleValues.slice(0,10).reverse();
+        let bar_yData = otuIDs.slice(0,10).reverse();
+        let bar_textData = otuLabels.slice(0,10).reverse();
+
+        // Create trace for data
+        let barData = [{
+            type:"bar",
+            orientation:"h",
+            x: bar_xData,
+            y: bar_yData
+                .map(id => `OTU ${id}`),
+            text: bar_textData            
+        }];
+        
+        // Layout portion
+        let barLayout = {
+            title: "<b>Top 10 Operational Taxonomic Units</b>",
+            xaxis: {title: "Sample Values"}
+        };
+
+        // Plotting to div
+        Plotly.newPlot("bar",barData,barLayout);
+
