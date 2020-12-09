@@ -18,11 +18,12 @@ Running the webpage can be tricky from local host files. Download the live serve
  
 ## Bar Chart
 -  Top 10 OTU's for the Test Subject
+<p align="center"><img src="https://github.com/GStout17/Plotly_challenge/blob/main/images/Bar.png" alt="Demographic Info"></p>
 
 ## Belly Button Washing Gauge
 - Frequency the Test Subject's belly button gets scrubbed.
+<p align="center"><img src="https://github.com/GStout17/Plotly_challenge/blob/main/images/Gauge.png" alt="Demographic Info"></p>
 
 ## OTU Bubble Chart
 - Displays Test Subject's OTU's in the form of a bubble chart
-
-
+<p align="center"><img src="https://github.com/GStout17/Plotly_challenge/blob/main/images/Bubble.png" alt="Demographic Info"></p>
