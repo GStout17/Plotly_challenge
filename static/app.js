@@ -3,11 +3,12 @@
 const dataUrl = "/data/samples.json";
 
 // Read in Data from samples.json
+d3.json(dataUrl).then(function(data){   
     console.log(`dataUrl: ${dataUrl}`,data);
 });
 
 // Demographic information
-function dataDemoInfo(subjectID){
+function sampleDemographicInfo(subjectID){
 
     //Needed to change to an integer
     subjectID = parseInt(subjectID);
@@ -148,3 +149,41 @@ function sampleCharts(subjectID){
 
     }); 
 };  
+
+
+// Initializing phase
+
+function init() {
+    // Grabing dropdown element
+    let subjectIDDropdown = d3.select("#selDataset")
+    // console.log("selected ID:",subjectID); # Checking
+
+    // Filling the dropdown menu with correct options
+    d3.json(dataUrl).then(data => {
+        subjectName = data.names;
+        // console.log("names",sampleName); # More Checking
+
+        subjectName.forEach(name => {
+            subjectIDDropdown.append("option")
+                .text(name)
+                .property("value",name);
+        }); //end of filling dropdown with the test subject IDs
+
+        // use the first sample to create the landing page info
+        const initialSubjectID = subjectName[0];
+        // console.log("first sample:",initialSample);
+
+        // call functions to build sample demographic info & sample charts
+        sampleDemographicInfo(initialSubjectID);
+        sampleCharts(initialSubjectID);
+    }); //end d3.json() promise
+};  //end initialization function
+
+// handle when the selected subjectID is changed in the dropdown
+function optionChanged(newSubjectID){
+    sampleDemographicInfo(newSubjectID);
+    sampleCharts(newSubjectID);
+};  //end optionChanged function
+
+// -----------------------------------------------------------------call initialization-----------------------------------------------------------------
+init();
