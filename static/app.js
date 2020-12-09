@@ -74,7 +74,7 @@ function sampleCharts(subjectID){
                 .map(id => `OTU ${id}`),
             text: bar_textData            
         }];
-        
+
         // Layout portion
         let barLayout = {
             title: "<b>Top 10 Operational Taxonomic Units</b>",
@@ -84,3 +84,67 @@ function sampleCharts(subjectID){
         // Plotting to div
         Plotly.newPlot("bar",barData,barLayout);
 
+ // Gauge Chart! Hey that's my name!
+
+        // Get the wash frequency
+        let metadata = data.metadata;
+        let washFreq = metadata[metadata.findIndex(element => element.id === parseInt(subjectID))].wfreq;
+        // console.log("wash frequency",washFreq); #checking
+
+        // Create Trace for Data
+        let gaugeData = [{
+            domain: {
+                x: [0,1],
+                y: [0,1]
+            },
+            value: washFreq,
+            type: "indicator",
+            mode: "gauge+number",
+            gauge: {
+                axis: {range: [null,9]},
+                steps: [
+                    {range: [0,1], color: "#fffceb"},
+                    {range: [1,2], color: "#f2edd0"},
+                    {range: [2,3], color: "#f2f0b6"},
+                    {range: [3,4], color: "#e9f2b6"},
+                    {range: [4,5], color: "#dcf2b6"},
+                    {range: [5,6], color: "#b2d483"},
+                    {range: [6,7], color: "#91d483"},
+                    {range: [7,8], color: "#69a865"},
+                    {range: [8,9], color: "#5b8c58"}
+                ],
+                bar: {color: "#c70606"}
+            }
+        }];
+        // Layout Portion
+        let gaugeLayout = {
+            title: "<b>Washing Frequency</b><br>Scrubs per Week"
+        };
+        
+        Plotly.newPlot("gauge",gaugeData,gaugeLayout);
+
+// Bubble Chart portion
+
+        // Create Trace
+        let bubbleData = [{
+            mode: "markers",
+            x: otuIDs,
+            y: sampleValues,
+            marker: {
+                size: sampleValues,
+                color: otuIDs,
+                colorscale: "Picnic" //https://plotly.com/javascript/colorscales/
+            },
+            text: otuLabels
+        }];
+        // Layout step
+        let bubbleLayout = {
+            title: "<b>All Operational Taxonomic Units</b>",
+            xaxis: {title: "OTU ID"},
+        };
+
+        // Plot to div
+        Plotly.newPlot("bubble",bubbleData,bubbleLayout);
+
+    }); 
+};  
