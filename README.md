@@ -5,8 +5,9 @@ Created an interactive dashboard to explore the Belly Button Biodiversity datase
 The dataset reveals that a small handful of microbial species (also called operational taxonomic units, or OTUs, in the study) were present in more than 70% of people, while the rest were relatively rare.
 
 ## Interactive Webpage
+The Github page link can be found here https://gstout17.github.io/Plotly_challenge/
 
-Running the webpage can be tricky from local host files. Download the live server extension in order to load the correct information!
+Running the webpage from local host files can be tricky. Download the live server extension in order to load the correct information!
 1. Download the files from this repository.
 2. open the html file using a live server NOT default. 
 
