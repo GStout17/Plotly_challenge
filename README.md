@@ -9,7 +9,7 @@ The Github page link can be found here https://gstout17.github.io/Plotly_challen
 
 Running the webpage from local host files can be tricky. Download the live server extension in order to load the correct information!
 1. Download the files from this repository.
-2. open the html file using a live server NOT default. 
+2. Open the html file using the live server extension NOT default web browser. 
 
 ## Content of Webpage
 - Drop Down menu of each subject by ID
