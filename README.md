@@ -1,1 +1,28 @@
 # Plotly_challenge
+
+Created an interactive dashboard to explore the Belly Button Biodiversity dataset, which catalogs the microbes that colonize human navels.
+
+The dataset reveals that a small handful of microbial species (also called operational taxonomic units, or OTUs, in the study) were present in more than 70% of people, while the rest were relatively rare.
+
+## Interactive Webpage
+
+Running the webpage can be tricky from local host files. Download the live server extension in order to load the correct information!
+1. Download the files from this repository.
+2. open the html file using a live server NOT default. 
+
+## Content of Webpage
+- Drop Down menu of each subject by ID
+- Includes Demographic Info
+  - ID, ethnicity, gender, age, location, bbtype, and wfreq
+ - Three interactive charts
+ 
+## Bar Chart
+-  Top 10 OTU's for the Test Subject
+
+## Belly Button Washing Gauge
+- Frequency the Test Subject's belly button gets scrubbed.
+
+## OTU Bubble Chart
+- Displays Test Subject's OTU's in the form of a bubble chart
+
+
