@@ -1,6 +1,6 @@
 
 // URL/Path
-const dataUrl = "./data/samples.json";
+const dataUrl = "/data/samples.json";
 
 // Read in Data from samples.json
 d3.json(dataUrl).then(function(data){   
@@ -185,5 +185,5 @@ function optionChanged(newSubjectID){
     sampleCharts(newSubjectID);
 };  //end optionChanged function
 
-// -----------------------------------------------------------------call initialization-----------------------------------------------------------------
+// Call init
 init();
